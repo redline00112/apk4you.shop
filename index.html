@@ -3,241 +3,544 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#07090a">
-<meta name="description" content="Modyx is a directory of popular mobile games for Android and iOS.">
-<title>Modyx – Find mobile games worth installing</title>
+<meta name="theme-color" content="#0a1517">
+<meta name="description" content="Apk4You is a directory of popular mobile games for Android and iOS.">
+<link rel="canonical" href="https://apk4you.shop/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Apk4You">
+<meta property="og:title" content="Apk4You – Find mobile games worth installing">
+<meta property="og:description" content="A directory of popular mobile games for Android and iOS.">
+<meta property="og:url" content="https://apk4you.shop/">
+<meta property="og:image" content="https://i.ibb.co/Vp9sX5bY/IMG-9547.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232ee6b8'/%3E%3Ctext x='32' y='46' font-family='Arial' font-weight='700' font-size='40' text-anchor='middle' fill='%2304211b'%3EA%3C/text%3E%3C/svg%3E">
+<title>Apk4You – Find mobile games worth installing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap">
 <style>
-:root{color-scheme:dark;--bg:#07090a;--surface:#0f1512;--ink:#eef6f1;--muted:#8fa399;--line:#1e2a24;--accent:#2ee67a;--accent-ink:#03140a;--chip:#16211b;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07090a;--surface:#0f1512;--ink:#eef6f1;--muted:#8fa399;--line:#1e2a24;--accent:#2ee67a;--accent-ink:#03140a;--chip:#16211b}}
-:root[data-theme="dark"]{--bg:#07090a;--surface:#0f1512;--ink:#eef6f1;--muted:#8fa399;--line:#1e2a24;--accent:#2ee67a;--accent-ink:#03140a;--chip:#16211b}
+/* ---------- Tokens ---------- */
+:root{
+  color-scheme:dark;
+  --bg:#0a1517;--panel:#112224;--panel-2:#183032;--line:#244548;
+  --ink:#eafffa;--muted:#8fb5ad;--brand:#2ee6b8;--brand-soft:rgba(46,230,184,.14);--on-brand:#04211b;
+  --dl-a:#ffb42e;--dl-b:#ff7a1a;--dl-ink:#2b1500;--ok:#7be0a0;
+  --shadow:0 24px 60px -12px rgba(0,0,0,.65);
+  --display:Outfit,system-ui,sans-serif;--body:Manrope,system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    color-scheme:light;
+    --bg:#f1fbf8;--panel:#ffffff;--panel-2:#e1f5ef;--line:#cdeae1;
+    --ink:#0b2a25;--muted:#4b6e67;--brand:#0b8a73;--brand-soft:rgba(11,138,115,.12);--on-brand:#ffffff;
+    --ok:#177a45;--shadow:0 24px 60px -16px rgba(8,60,50,.28)
+  }
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f1fbf8;--panel:#ffffff;--panel-2:#e1f5ef;--line:#cdeae1;
+  --ink:#0b2a25;--muted:#4b6e67;--brand:#0b8a73;--brand-soft:rgba(11,138,115,.12);--on-brand:#ffffff;
+  --ok:#177a45;--shadow:0 24px 60px -16px rgba(8,60,50,.28)
+}
+
+/* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Figtree,system-ui,sans-serif}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);font:16px/1.55 var(--body);
+  background:radial-gradient(900px 520px at 8% -6%,color-mix(in srgb,var(--brand) 16%,transparent),transparent 62%),
+             radial-gradient(760px 480px at 100% 18%,color-mix(in srgb,var(--dl-b) 11%,transparent),transparent 62%),var(--bg);
+  background-attachment:fixed}
+body:has(dialog[open]){overflow:hidden}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.logo{font:800 26px/1 "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:-.03em}
-.logo span{color:var(--accent)}
-nav{display:flex;gap:18px;font-weight:500;font-size:15px}
-nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
-.hero{padding:10px 0 6px}
-.bh{border-radius:22px;padding:44px 32px;min-height:240px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);background-color:#050706;background-image:linear-gradient(100deg,rgba(5,7,6,.88),rgba(5,7,6,.35)),url("https://i.ibb.co/Vp9sX5bY/IMG-9547.jpg");background-size:cover;background-position:center;background-repeat:no-repeat}
-.bh h1,.bh p{text-shadow:0 2px 14px rgba(0,0,0,.6)}
-.hero .bh p{color:#dbe9e0;font-size:18px;margin:0}
-.hero .tagline{text-align:center;color:var(--accent);font-weight:600;font-size:14px;max-width:none;margin:14px 0 0}
-h1{font:800 clamp(38px,7vw,72px)/.98 "Bricolage Grotesque",sans-serif;letter-spacing:-.04em;margin:0 0 16px;max-width:13ch}
-.hero p{max-width:52ch;color:var(--muted);font-size:18px;margin:0}
-.tools{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0 12px;border-bottom:1px solid var(--line);margin-top:24px}
-.search{width:100%;padding:15px 20px 15px 50px;border-radius:16px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:17px}
-.search:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 4px rgba(46,230,122,.18)}
-.sbox{position:relative;display:block}
-.sbox svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--accent)}
-.count{color:var(--muted);font-size:14px;margin:18px 0 12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;padding-bottom:50px}
-.grid>article{display:flex}
-.card{flex:1;display:flex;flex-direction:column;align-items:center;gap:10px;width:100%;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px;color:var(--ink);font:inherit;cursor:pointer}
-.card:hover{border-color:var(--accent)}
-.tile{position:relative;overflow:hidden;width:76px;height:76px;border-radius:20px;display:grid;place-items:center;color:#fff;flex:none}
+img,svg{max-width:100%}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px 96px}
+
+/* ---------- Header (floating pill) ---------- */
+header{position:sticky;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin:12px 0 0;padding:8px 8px 8px 22px;border-radius:999px;border:1px solid var(--line);
+  background:color-mix(in srgb,var(--panel) 78%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 14px 30px -18px rgba(0,0,0,.6)}
+.logo{font:800 24px/1 var(--display);text-decoration:none;letter-spacing:-.03em}
+.logo span{color:var(--brand)}
+nav{display:flex;gap:4px}
+nav a{text-decoration:none;color:var(--muted);font-weight:700;font-size:14.5px;padding:9px 16px;border-radius:999px;transition:background .2s,color .2s}
+nav a:hover{color:var(--ink);background:var(--brand-soft)}
+nav a#helpNav{background:var(--brand);color:var(--on-brand)}
+nav a#helpNav:hover{filter:brightness(1.08)}
+
+/* ---------- Hero (split layout) ---------- */
+.hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;margin-top:22px;
+  padding:clamp(28px,6vw,60px);border-radius:34px;border:1px solid var(--line);color:#eafffa;
+  background-color:#0a1517;
+  background-image:linear-gradient(115deg,rgba(10,21,23,.95) 25%,rgba(10,21,23,.6)),url("https://i.ibb.co/Vp9sX5bY/IMG-9547.jpg");
+  background-size:cover;background-position:center}
+.hero h1{margin:0 0 14px;font:800 clamp(34px,6.2vw,62px)/1.02 var(--display);letter-spacing:-.04em}
+.hero h1 em{font-style:normal;color:#2ee6b8}
+.hero p{margin:0;color:#c3e3dc;font-size:18px;max-width:44ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.cta,.ghost{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.cta{background:linear-gradient(110deg,var(--dl-a),var(--dl-b));color:var(--dl-ink);box-shadow:0 14px 28px -12px rgba(255,122,26,.8)}
+.cta:hover{transform:translateY(-2px)}
+.cta svg{width:18px;height:18px}
+.ghost{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.07);color:#eafffa}
+.ghost:hover{background:rgba(255,255,255,.14)}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin:24px 0 0;padding:0;list-style:none;font-size:13.5px;font-weight:600;color:#a9cfc6}
+.trust li::before{content:"✓";margin-right:6px;color:#2ee6b8;font-weight:800}
+/* floating game icons (filled from data.json) */
+.hero-art{position:relative;height:270px}
+.hero-art:empty{display:none}
+.ha{position:absolute;width:104px;height:104px;border-radius:28px;transform:rotate(var(--r));animation:float 6s ease-in-out infinite;box-shadow:0 24px 40px -16px rgba(0,0,0,.7)}
+.ha .tile{width:100%;height:100%;border-radius:inherit;margin:0}
+.ha0{--r:-8deg;left:4%;top:10%;width:124px;height:124px}
+.ha1{--r:7deg;right:6%;top:0;animation-delay:-1.5s}
+.ha2{--r:4deg;left:32%;bottom:0;width:112px;height:112px;animation-delay:-3s}
+.ha3{--r:-6deg;right:2%;bottom:14%;width:88px;height:88px;animation-delay:-4.5s}
+@keyframes float{50%{transform:rotate(var(--r)) translateY(-12px)}}
+
+/* ---------- Section heading + search ---------- */
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:48px 0 8px}
+.sec-head h2{margin:0;font:800 clamp(26px,4.4vw,34px)/1.1 var(--display);letter-spacing:-.03em}
+.count{margin:0;color:var(--muted);font-size:14px;font-weight:600}
+.tools{position:sticky;top:calc(env(safe-area-inset-top,0px) + 78px);z-index:5;padding:10px 0;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.trow{display:flex;gap:10px}
+.sbox{position:relative;flex:1;min-width:0;display:block}
+.sbox svg{position:absolute;left:17px;top:50%;transform:translateY(-50%);width:19px;height:19px;color:var(--muted);pointer-events:none}
+.search{width:100%;padding:14px 18px 14px 47px;border-radius:999px;border:1.5px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:16px;transition:border-color .2s,box-shadow .2s}
+.search::placeholder{color:var(--muted)}
+.search:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 4px var(--brand-soft)}
+.sort{flex:none;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--panel);color:var(--ink);font:700 14px var(--body);cursor:pointer}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 0 2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);font-weight:700;font-size:14px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{color:var(--ink);border-color:var(--brand)}
+.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+
+/* ---------- Game grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-top:14px}
+.card{position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:24px;transition:border-color .2s,transform .25s,box-shadow .25s}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:96px;background:linear-gradient(160deg,color-mix(in srgb,var(--c,var(--brand)) 50%,transparent),transparent);opacity:.55;pointer-events:none}
+.card:hover{border-color:color-mix(in srgb,var(--c,var(--brand)) 70%,var(--line));transform:translateY(-4px);box-shadow:0 22px 38px -22px color-mix(in srgb,var(--c,var(--brand)) 70%,transparent)}
+.info{position:relative;flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:18px 16px 14px;text-align:left;background:none;border:0;cursor:pointer}
+.tile{position:relative;overflow:hidden;width:68px;height:68px;border-radius:20px;display:grid;place-items:center;color:#fff;flex:none;box-shadow:0 12px 22px -8px rgba(0,0,0,.55);margin-bottom:10px;outline:3px solid var(--panel)}
 .tile svg{width:50%;height:50%}
-.tile.has{background:var(--surface)!important}
+.tile.has{background:var(--panel)!important}
 .tile.has svg{display:none}
 .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.plat{display:flex;gap:5px}
-.plat span{font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--chip);color:var(--accent)}
-.card h3{margin:0;font:600 16px/1.2 "Bricolage Grotesque",sans-serif}
-.meta{color:var(--muted);font-size:13px}
-.empty{grid-column:1/-1;padding:40px 0;color:var(--muted)}
-dialog{overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.65);border:1px solid var(--line);border-radius:22px;background:var(--surface);color:var(--ink);padding:0;width:min(560px,calc(100vw - 28px));max-height:calc(100vh - 40px)}
-dialog::backdrop{background:rgba(10,8,30,.6)}
-.dbody{padding:0}
-.banner{position:relative;display:grid;place-items:center;padding:34px 20px 52px}
-.banner .tile{width:92px;height:92px;font-size:34px;outline:3px solid rgba(255,255,255,.28);box-shadow:0 12px 30px rgba(0,0,0,.45)}
-.x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(0,0,0,.45);color:#fff;font-size:22px;line-height:1;cursor:pointer}
-.dc{padding:22px 24px 26px;margin-top:-24px;position:relative;background:var(--surface);border-radius:22px 22px 0 0}
-.dc h2{margin:0 0 10px;font:800 28px/1.1 "Bricolage Grotesque",sans-serif}
-.pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
-.pills span{padding:4px 11px;border-radius:999px;background:var(--chip);font-size:13px;color:var(--accent);font-weight:600}
-.desc{margin:0 0 16px;color:var(--muted)}
-.dc h4{margin:0 0 8px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.feat{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:8px}
-.feat li{position:relative;padding-left:26px}
-.feat li::before{content:"\2713";position:absolute;left:0;color:var(--accent);font-weight:800}
-.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media (max-width:420px){.btns{grid-template-columns:1fr}}
-.btn{display:block;text-align:center;padding:14px 20px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none;border:0;font-size:15px;cursor:pointer}
-.btn.ios{background:var(--ink);color:var(--bg)}
-.note{background:var(--chip);border-radius:12px;padding:10px 14px;font-size:14px;margin:0 0 16px}
-footer{border-top:1px solid var(--line);padding:26px 0 36px;color:var(--muted);font-size:14px}
-footer p{max-width:70ch;margin:0 0 8px}
-.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px}
-@media (max-width:640px){.fgrid{grid-template-columns:1fr 1fr}}
-.fgrid h5{margin:0 0 10px;color:var(--ink);font-size:14px}
-.fgrid a:not(.logo){display:block;text-decoration:none;margin-bottom:6px}
-.fgrid a:not(.logo):hover{color:var(--accent)}
-.fgrid .logo{display:inline-block;margin-bottom:10px;color:var(--ink)}
-footer .legal{border-top:1px solid var(--line);margin-top:22px;padding-top:16px}
-@media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}}
-.helpfab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:54px;height:54px;border-radius:50%;border:0;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;cursor:pointer;z-index:20;box-shadow:0 8px 24px rgba(46,230,122,.35)}
-.helpfab svg{width:28px;height:28px}
-.hbody{padding:26px}
-.hbody h2{margin:0 0 6px;font:800 28px/1.1 "Bricolage Grotesque",sans-serif;color:var(--accent)}
-.hbody h3{margin:20px 0 6px;font-size:16px}
-.hbody p{margin:0 0 8px;color:var(--muted)}
-.hbody ol,.hbody ul{margin:0;padding-left:22px;display:grid;gap:6px}
-.tips{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:18px 0 6px}
-.tips h4{margin:0 0 8px;color:var(--accent)}
-.hbody .btn{margin-top:18px;display:inline-block}
-.soon{margin:12px 0 0;color:var(--accent);font-size:14px;min-height:1.2em}
+.card h3{margin:0;font:700 18px/1.2 var(--display);letter-spacing:-.01em;overflow-wrap:anywhere}
+.meta{color:var(--muted);font-size:13.5px;font-weight:600}
+.plat{display:flex;gap:6px;margin-top:6px}
+.plat span{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--brand-soft);color:var(--brand)}
 
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* ---------- Download button ---------- */
+.dl{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border:0;border-radius:14px;cursor:pointer;
+  color:var(--dl-ink);font:700 15px/1 var(--display);letter-spacing:-.01em;text-decoration:none;
+  background:linear-gradient(110deg,var(--dl-a),var(--dl-b),var(--dl-a));background-size:220% 100%;background-position:0 0;
+  box-shadow:0 10px 22px -10px rgba(255,122,26,.7);
+  transition:background-position .6s ease,transform .2s ease,box-shadow .25s ease}
+.dl svg{width:19px;height:19px;flex:none;transition:transform .25s ease}
+.dl:hover{background-position:100% 0;transform:translateY(-1px);box-shadow:0 14px 28px -10px rgba(255,122,26,.85)}
+.dl:hover svg{transform:translateY(2px)}
+.dl:active{transform:scale(.97)}
+.dl.alt{background:var(--ink);color:var(--bg);box-shadow:none}
+.dl.alt:hover{box-shadow:0 12px 24px -12px rgba(0,0,0,.5)}
+.card .dl{margin:0 14px 14px;border-radius:999px}
+.empty{grid-column:1/-1;text-align:center;padding:48px 16px;color:var(--muted)}
+.empty button{margin-top:12px;padding:10px 18px;border-radius:12px;border:1px solid var(--line);background:var(--panel);cursor:pointer;font-weight:600}
+
+/* ---------- Dialogs (shared) ---------- */
+dialog{padding:0;border:1px solid var(--line);border-radius:26px;background:var(--panel);color:var(--ink);box-shadow:var(--shadow);
+  width:min(540px,calc(100vw - 28px));max-height:calc(100dvh - 28px);overflow:hidden}
+dialog[open]{display:flex;flex-direction:column;animation:pop .28s cubic-bezier(.2,.9,.3,1.1)}
+dialog::backdrop{background:rgba(3,12,13,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.x{position:absolute;top:14px;right:14px;z-index:2;width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,.35);color:#fff;font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(6px);transition:background .2s}
+.x:hover{background:rgba(0,0,0,.6)}
+
+/* Game popup */
+.dscroll{overflow-y:auto;flex:1;overscroll-behavior:contain}
+.banner{position:relative;height:150px;overflow:hidden}
+.banner img{position:absolute;left:-30px;top:-30px;width:calc(100% + 60px);height:calc(100% + 60px);object-fit:cover;filter:blur(24px) saturate(1.5);opacity:.6}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,var(--panel))}
+.dc{position:relative;padding:0 24px 22px;margin-top:-62px;z-index:1}
+.dc .tile{width:112px;height:112px;border-radius:30px;outline:5px solid var(--panel);margin-bottom:16px;box-shadow:0 18px 36px -10px var(--glow,rgba(0,0,0,.6));animation:logo .45s cubic-bezier(.2,.9,.3,1.2) .08s backwards}
+@keyframes logo{from{opacity:0;transform:scale(.7) translateY(10px)}to{opacity:1;transform:none}}
+.titlerow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.beta{padding:3px 10px;border-radius:999px;background:var(--brand);color:var(--on-brand);font:700 12px var(--body)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:0 0 18px}
+.stats div{padding:10px 12px;border-radius:14px;background:var(--panel-2);min-width:0}
+.stats small{display:block;color:var(--muted);font-size:12.5px}
+.stats b{display:block;font:700 14.5px/1.3 var(--display);overflow-wrap:anywhere}
+.dc h2{margin:0;font:800 28px/1.1 var(--display);letter-spacing:-.03em}
+.by{margin:4px 0 14px;color:var(--muted);font-size:15px}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.pills span{padding:5px 12px;border-radius:999px;background:var(--brand-soft);font-size:13px;color:var(--brand);font-weight:700}
+.desc{margin:0 0 20px;color:var(--muted);max-width:60ch}
+.dc h4{margin:0 0 10px;font:700 15px var(--display)}
+.feat{list-style:none;padding:0;margin:0 0 18px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.feat li{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:12px;background:var(--panel-2);font-size:14.5px;line-height:1.4}
+.feat li{position:relative}
+.feat li::before{content:"";flex:none;width:18px;height:18px;margin-top:1px;border-radius:50%;background:var(--brand)}
+.feat li::after{content:"";position:absolute;left:19px;top:15px;width:4px;height:8px;border:solid var(--on-brand);border-width:0 2.2px 2.2px 0;transform:rotate(45deg)}
+.note{background:var(--panel-2);border-radius:12px;padding:12px 14px;font-size:14px;margin:0 0 6px;color:var(--muted)}
+.dfoot{flex:none;padding:16px 24px calc(18px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--panel)}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hint{margin:10px 0 0;text-align:center;font-size:13px;color:var(--muted)}
+
+/* Help popup */
+.hbody{overflow-y:auto;padding:28px 24px 24px;overscroll-behavior:contain}
+.hbody h2{margin:0 0 4px;font:800 28px/1.1 var(--display);letter-spacing:-.03em;padding-right:44px}
+.hbody .lead{margin:0 0 20px;color:var(--muted)}
+.hbody h3{margin:22px 0 10px;font:700 16px var(--display)}
+.hsteps{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:s}
+.hsteps li{counter-increment:s;display:flex;gap:14px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--panel-2);font-weight:500}
+.hsteps li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--brand);color:var(--on-brand);font:700 14px var(--display)}
+.hbody ul.plain{margin:0;padding-left:20px;display:grid;gap:8px;color:var(--muted)}
+.hbody p{margin:0 0 10px;color:var(--muted)}
+.tips{border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-top:20px}
+.tips h3{margin:0 0 10px}
+.hbody .dl{margin-top:22px}
+
+/* ---------- Help button ---------- */
+.helpfab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;gap:8px;height:50px;padding:0 20px 0 16px;border-radius:999px;border:0;background:var(--brand);color:var(--on-brand);font-weight:700;cursor:pointer;box-shadow:0 12px 28px -8px rgba(46,230,184,.45);transition:transform .2s}
+.helpfab:hover{transform:translateY(-2px)}
+.helpfab svg{width:22px;height:22px}
+
+/* ---------- Save (heart) ---------- */
+.card{position:relative}
+.fav{position:absolute;top:10px;right:10px;z-index:1;width:36px;height:36px;border-radius:50%;border:0;display:grid;place-items:center;cursor:pointer;background:color-mix(in srgb,var(--panel) 82%,transparent);color:var(--muted);transition:color .2s,transform .2s,background .2s}
+.fav svg{width:19px;height:19px}
+.fav:hover{color:var(--brand);transform:scale(1.08)}
+.fav[aria-pressed="true"]{color:var(--brand)}
+.fav[aria-pressed="true"] svg{fill:currentColor}
+.x.save{right:110px}.x.share{right:62px}
+.x[aria-pressed="true"] svg{fill:currentColor}
+.x svg{width:19px;height:19px}
+.x.save[aria-pressed="true"]{color:var(--brand)}
+/* ---------- Toast ---------- */
+.toast{display:none;position:fixed;inset:auto auto calc(88px + env(safe-area-inset-bottom,0px)) 50%;transform:translateX(-50%);margin:0;border:0;padding:11px 18px;border-radius:999px;background:var(--ink);color:var(--bg);font:600 14px var(--body);box-shadow:var(--shadow);white-space:nowrap;max-width:calc(100vw - 32px);overflow:hidden;text-overflow:ellipsis}
+.toast:popover-open{display:block;animation:toast .25s ease}
+@keyframes toast{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translateX(-50%)}}
+
+/* ---------- Footer ---------- */
+footer{margin-top:64px;padding:30px;border:1px solid var(--line);border-radius:30px;background:color-mix(in srgb,var(--panel) 70%,transparent);color:var(--muted);font-size:14.5px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:28px}
+.fgrid h5{margin:0 0 12px;color:var(--ink);font:700 14px var(--display)}
+.fgrid a:not(.logo){display:block;text-decoration:none;margin-bottom:8px;overflow-wrap:anywhere}
+.fgrid a:not(.logo):hover{color:var(--brand)}
+.fgrid .logo{display:inline-block;margin-bottom:10px;color:var(--ink)}
+.fgrid p{margin:0;max-width:34ch}
+nav.col{display:block}
+.legal{border-top:1px solid var(--line);margin:28px 0 0;padding-top:18px;max-width:80ch}
+
 /* ---------- Responsive ---------- */
-html{-webkit-text-size-adjust:100%}
-img,svg{max-width:100%}
-.wrap{padding-bottom:84px}
-dialog{max-height:calc(100dvh - 24px)}
-.fgrid a{overflow-wrap:anywhere}
-@media (min-width:1280px){
-  .wrap{max-width:1180px}
-  .grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero-art{display:none}
 }
 @media (max-width:768px){
   .wrap{padding-left:16px;padding-right:16px}
-  header{flex-wrap:wrap;gap:10px 16px;padding:14px 0}
-  .logo{font-size:24px}
-  nav{flex-wrap:wrap;gap:6px 16px;font-size:14px}
-  .bh{padding:32px 22px;min-height:200px}
-  .hero .bh p{font-size:16px}
-  .tools{margin-top:16px;padding:10px 0}
-  .search{padding:13px 16px 13px 46px;font-size:16px}
-  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .hero{border-radius:28px}
+  .hero p{font-size:16px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  footer{padding:22px}
 }
-@media (max-width:480px){
+@media (max-width:540px){
+  header{padding:6px 6px 6px 16px}
+  .logo{font-size:20px}
+  nav a{padding:8px 11px;font-size:13.5px}
+  .tools{top:calc(env(safe-area-inset-top,0px) + 70px)}
+  .sort{padding:0 10px;font-size:13px}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .card{padding:12px 8px;gap:8px}
-  .tile{width:64px;height:64px;border-radius:16px}
-  .card h3{font-size:15px;overflow-wrap:anywhere}
-  .plat span{font-size:10.5px;padding:2px 7px}
-  dialog{width:calc(100vw - 20px);border-radius:18px}
-  .banner{padding:26px 16px 44px}
-  .banner .tile{width:80px;height:80px}
-  .dc{padding:20px 18px 22px}
-  .dc h2{font-size:24px}
-  .hbody{padding:20px 18px}
-  .hbody h2{font-size:24px}
-  .x{width:40px;height:40px}
-  .helpfab{width:50px;height:50px;right:14px}
+  .info{padding:14px 12px 12px}
+  .tile{width:58px;height:58px;border-radius:17px}
+  .card h3{font-size:16px}
+  .card .dl{margin:0 10px 10px;min-height:44px;font-size:14px}
+  .plat span{font-size:10.5px;padding:2px 8px}
+  /* popups slide up from the bottom like a phone sheet */
+  dialog{width:100%;max-width:100%;margin:auto 0 0;border-radius:26px 26px 0 0;max-height:92dvh;border-bottom:0}
+  dialog[open]{animation:sheet .32s cubic-bezier(.2,.9,.3,1)}
+  .feat{grid-template-columns:1fr}
+  .stats div{padding:9px 10px}
+  .dc,.hbody{padding-left:18px;padding-right:18px}
+  .dfoot{padding-left:18px;padding-right:18px}
+  .btns{grid-template-columns:1fr}
+  .helpfab{right:14px;height:46px;padding:0 16px 0 12px}
 }
-@media (max-width:380px){
-  .fgrid{grid-template-columns:1fr}
-  .bh{padding:26px 18px}
+@keyframes sheet{from{transform:translateY(100%)}to{transform:none}}
+@media (max-width:380px){.fgrid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <a class="logo" href="#">mody<span>x</span></a>
+    <a class="logo" href="#">apk4you<span>.shop</span></a>
     <nav aria-label="Main">
-      <a href="#">Home</a><a href="#games">Games</a><a href="#about">About</a><a href="#" id="helpNav">Help</a>
+      <a href="#games">Games</a><a href="#about">About</a><a href="#" id="helpNav">Help</a>
     </nav>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="bh">
-        <h1 id="hero-title">Find mobile games worth installing.</h1>
+      <div class="hero-copy">
+        <h1 id="hero-title">Find mobile games <em>worth installing.</em></h1>
         <p>Official downloads for Android and iOS. No mods, no sideloading.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#games">Browse games
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </a>
+          <a class="ghost" href="#" id="helpHero">How it works</a>
+        </div>
+        <ul class="trust"><li>Official store links</li><li>No sideloading</li><li>Android &amp; iOS</li></ul>
       </div>
-      <p class="tagline">Your favorite games on mobile, the safe way</p>
+      <div class="hero-art" id="heroArt" aria-hidden="true"></div>
     </section>
 
     <section id="games" aria-label="Games">
+      <div class="sec-head"><h2>All games</h2><p class="count" id="count" aria-live="polite"></p></div>
       <div class="tools">
-        <label class="sbox">
-          <span class="sr">Search games</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-          <input class="search" id="q" type="search" placeholder="Search games, e.g. Roblox" autocomplete="off">
-        </label>
+        <div class="trow">
+          <label class="sbox">
+            <span class="sr">Search games</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+            <input class="search" id="q" type="search" placeholder="Search games, e.g. Roblox" autocomplete="off">
+          </label>
+          <select class="sort" id="sort" aria-label="Sort games"><option value="featured">Featured</option><option value="az">A–Z</option></select>
+        </div>
+        <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
       </div>
-      <p class="count" id="count" aria-live="polite"></p>
       <div class="grid" id="grid"></div>
     </section>
   </main>
 
   <footer id="about">
     <div class="fgrid">
-      <div><a class="logo" href="#">mody<span>x</span></a><p>An independent directory of mobile games.</p></div>
-      <nav aria-label="Quick links"><h5>Quick Links</h5><a href="#">Home</a><a href="#games">All Games</a><a href="#about">About</a></nav>
-      <nav aria-label="Support"><h5>Support</h5><a href="#">FAQ</a><a href="#">Contact Us</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></nav>
-      <div><h5>Contact</h5><a href="mailto:hello@modyx.xyz">hello@modyx.xyz</a><a href="#">modyx.xyz</a></div>
+      <div><a class="logo" href="#">apk4you<span>.shop</span></a><p>An independent directory of mobile games.</p></div>
+      <nav class="col" aria-label="Quick links"><h5>Quick Links</h5><a href="#">Home</a><a href="#games">All Games</a><a href="#about">About</a></nav>
+      <nav class="col" aria-label="Support"><h5>Support</h5><a href="#">FAQ</a><a href="#">Contact Us</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></nav>
+      <div><h5>Contact</h5><a href="mailto:hello@apk4you.shop">hello@apk4you.shop</a><a href="https://apk4you.shop">apk4you.shop</a></div>
     </div>
-    <p class="legal">© 2026 Modyx. Game names and trademarks belong to their owners. Modyx is not affiliated with any publisher. Availability, beta programs and pricing vary by region and are set by the store.</p>
+    <p class="legal">© 2026 Apk4You. Game names and trademarks belong to their owners. Apk4You is not affiliated with any publisher. Availability, beta programs and pricing vary by region and are set by the store.</p>
   </footer>
 </div>
 
-<dialog id="dlg" aria-labelledby="dt"><div class="dbody" id="dbody"></div></dialog>
+<div class="toast" id="toast" popover="manual" role="status"></div>
 
-<button class="helpfab" id="helpBtn" aria-label="Open Help Center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-.9.6-1.5 1.1-1.5 2.2M12 17h.01"/></svg></button>
+<!-- Game popup -->
+<dialog id="dlg" aria-labelledby="dt"><div id="dbody" style="display:flex;flex-direction:column;min-height:0;flex:1"></div></dialog>
 
+<button class="helpfab" id="helpBtn" aria-label="Open Help Center">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-.9.6-1.5 1.1-1.5 2.2M12 17h.01"/></svg>Help
+</button>
+
+<!-- Help popup -->
 <dialog id="help" aria-labelledby="ht">
+  <button class="x" id="helpX" aria-label="Close" style="background:var(--panel-2);color:var(--ink)">&times;</button>
   <div class="hbody">
-    <h2 id="ht">Help Center</h2>
-    <h3>How to Download Games</h3>
-    <p>To access our free downloads, we require users to complete a simple offer. These offers help support our platform and keep it free for everyone.</p>
-    <p>The offers may include:</p>
-    <ul><li>Trying an app or game</li><li>Completing a short survey</li><li>Signing up for a service</li></ul>
-    <p>Please read each offer before you start and only complete ones you are comfortable with. Thank you for your support!</p>
-    <h3>Download Steps:</h3>
-    <ol><li>Click on the game you want to download</li><li>Complete the simple offer (usually takes less than 1 minute)</li><li>Get your download link</li><li>Install and enjoy!</li></ol>
-    <div class="tips"><h4>Installation Tips:</h4><ul>
-      <li>Install only from the official store. Don’t enable “Unknown sources”: modified APK files are a common way malware spreads.</li>
-      <li>Some games download extra data the first time you open them, so keep Wi-Fi on and leave enough free storage.</li>
-      <li>If something goes wrong, clear the app’s cache, restart your phone, update the game and your system, or reinstall.</li>
-      <li>Availability, pricing and beta programs are set by the store, so a game may not appear in your country.</li>
-    </ul></div>
+    <h2 id="ht">How downloads work</h2>
+    <p class="lead">Four quick steps. It usually takes about a minute.</p>
+    <ol class="hsteps">
+      <li>Tap <b>&nbsp;Download&nbsp;</b> on the game you want</li>
+      <li>Complete one simple offer</li>
+      <li>Get your download link</li>
+      <li>Install and enjoy</li>
+    </ol>
+
+    <h3>Why is there an offer?</h3>
+    <p>Offers keep Apk4You free for everyone. They may ask you to try an app or game, answer a short survey, or sign up for a service. Read each one before you start and only complete ones you’re comfortable with.</p>
+
+    <div class="tips">
+      <h3>Installation tips</h3>
+      <ul class="plain">
+        <li>Install only from the official store. Don’t enable “Unknown sources”: modified APK files are a common way malware spreads.</li>
+        <li>Some games download extra data the first time you open them, so keep Wi-Fi on and leave enough free storage.</li>
+        <li>If something goes wrong, clear the app’s cache, restart your phone, update the game and your system, or reinstall.</li>
+        <li>Availability, pricing and beta programs are set by the store, so a game may not appear in your country.</li>
+      </ul>
+    </div>
+
     <h3>Beta programs</h3>
-    <p>Some publishers run official betas. When one is open, you can join it from the game’s store page. Modyx never hosts beta files.</p>
+    <p>Some publishers run official betas. When one is open, you can join it from the game’s store page. Apk4You never hosts beta files.</p>
+
     <h3>Need more help?</h3>
-    <p>Email <a href="mailto:hello@modyx.xyz">hello@modyx.xyz</a> and we’ll get back to you.</p>
-    <button class="btn" id="helpClose">Got it, thanks!</button>
+    <p>Email <a href="mailto:hello@apk4you.shop">hello@apk4you.shop</a> and we’ll get back to you.</p>
+    <button class="dl alt" id="helpClose" type="button" style="width:100%">Got it, thanks</button>
   </div>
 </dialog>
 
 <script>
-let G=[];
+let G=[],CAT="All",SORT="featured",cur=-1;
 const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const S=p=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
 const IC={Sports:S('<circle cx="12" cy="12" r="9"/><path d="M12 7l4 3-1.5 5h-5L8 10z"/>'),Sandbox:S('<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/>'),RPG:S('<path d="M5 19l9-9M14 10l5-5V3h-2l-5 5"/><path d="M7 14l3 3M4 20l2-2"/>'),Shooter:S('<circle cx="12" cy="12" r="7"/><path d="M12 2v5M12 17v5M2 12h5M17 12h5"/>'),Action:S('<path d="M13 2L5 14h6l-1 8 8-12h-6z"/>'),Strategy:S('<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>'),Party:S('<circle cx="12" cy="12" r="9"/><path d="M8 14c1 2 2.5 3 4 3s3-1 4-3M9 9.5h.01M15 9.5h.01"/>'),Arcade:S('<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>'),Racing:S('<path d="M5 21V4M5 5h13l-2.5 4L18 13H5"/>'),MOBA:S('<path d="M4 4l16 16M20 4L4 20M4 4h4M20 4h-4"/>'),Card:S('<rect x="4" y="6" width="11" height="15" rx="2"/><path d="M9 3h9a2 2 0 012 2v12"/>'),Puzzle:S('<path d="M10 4a2 2 0 114 0v2h4v4h-2a2 2 0 100 4h2v4h-4v-2a2 2 0 10-4 0v2H6v-4h2a2 2 0 100-4H6V6h4z"/>'),Adventure:S('<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>'),Simulation:S('<path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14zM5 19l8-8"/>')};
+const ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>';
+const HEART='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg>';
+const SHARE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3M8 7l4-4 4 4M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6"/></svg>';
+
+/* ---------- helpers ---------- */
+const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const imgOf=g=>g.img||"icons/"+g.n.toLowerCase().replace(/[^a-z0-9]+/g,"-")+".png";
+
+/* saved games (kept in this browser only) */
+const KEY="apk4you:saved";
+let saved=new Set();
+try{saved=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"))}catch(e){}
+function toggleSave(name){
+  saved.has(name)?saved.delete(name):saved.add(name);
+  try{localStorage.setItem(KEY,JSON.stringify([...saved]))}catch(e){}
+  toast(saved.has(name)?"Saved to your list":"Removed from your list");
+}
+
+/* small message that also shows above open popups */
+let tt;
+function toast(msg){
+  const t=$("#toast");t.textContent=msg;
+  if(typeof t.showPopover!=="function")return;
+  try{t.hidePopover()}catch(e){}
+  try{t.showPopover()}catch(e){return}
+  clearTimeout(tt);tt=setTimeout(()=>{try{t.hidePopover()}catch(e){}},2000);
+}
+
+/* icon images: show real icon when it loads, keep the coloured glyph otherwise */
 document.addEventListener("load",e=>{if(e.target.tagName==="IMG")e.target.parentNode.classList.add("has")},true);
 document.addEventListener("error",e=>{if(e.target.tagName==="IMG")e.target.remove()},true);
-const tile=g=>`<div class="tile" style="background:linear-gradient(140deg,${g.h},color-mix(in srgb,${g.h} 50%,#000))" aria-hidden="true">${IC[g.c]||IC.Action}<img src="${g.img||"icons/"+g.n.toLowerCase().replace(/[^a-z0-9]+/g,"-")+".png"}" alt=""></div>`;
-const dl=(g,k,label,cls)=>`<button class="btn ${cls}" type="button" onclick="_xb()">${label}</button>`;
+
+const tile=g=>`<div class="tile" style="background:linear-gradient(140deg,${esc(g.h)},color-mix(in srgb,${esc(g.h)} 50%,#000))" aria-hidden="true">${IC[g.c]||IC.Action}<img src="${esc(imgOf(g))}" alt=""></div>`;
+
+/* starts the offer / download flow (provided by the external script below) */
+function startDownload(){
+  if(typeof _xb==="function")_xb();
+}
+
+/* ---------- list ---------- */
+function renderChips(){
+  const cats=["All","Saved",...(G.some(g=>g.beta)?["Beta"]:[]),...new Set(G.map(g=>g.c))];
+  $("#chips").innerHTML=cats.map(c=>`<button type="button" class="chip" data-c="${esc(c)}" aria-pressed="${c===CAT}">${c==="Saved"?"♥ Saved"+(saved.size?" ("+saved.size+")":""):esc(c)}</button>`).join("");
+}
+const inCat=g=>CAT==="All"||(CAT==="Saved"?saved.has(g.n):CAT==="Beta"?!!g.beta:g.c===CAT);
+
 function render(){
   const q=$("#q").value.trim().toLowerCase();
-  const r=G.filter(g=>(g.n+g.c+g.pub).toLowerCase().includes(q));
+  const r=G.map((g,i)=>[g,i]).filter(([g])=>inCat(g)&&(g.n+" "+g.c+" "+g.pub).toLowerCase().includes(q));
+  if(SORT==="az")r.sort((x,y)=>x[0].n.localeCompare(y[0].n));
   $("#count").textContent=r.length+(r.length===1?" game":" games");
-  const gr=$("#grid");
-  gr.innerHTML=r.length?r.map(g=>`<article><button class="card" data-n="${g.n}">${tile(g)}<h3>${g.n}</h3><div class="meta">${g.c}</div><div class="plat"><span>Android</span><span>iOS</span></div></button></article>`).join(""):'<div class="empty">No games match your search.</div>';
+  const none=CAT==="Saved"&&!saved.size&&!q
+    ?"You haven’t saved any games yet. Tap the heart on a game to keep it here."
+    :"No games match your search.";
+  $("#grid").innerHTML=r.length?r.map(([g,i])=>`<article class="card" style="--c:${esc(g.h)}">
+    <button class="fav" type="button" data-fav="${i}" aria-pressed="${saved.has(g.n)}" aria-label="Save ${esc(g.n)}">${HEART}</button>
+    <button class="info" type="button" data-i="${i}" aria-label="${esc(g.n)} – view details">${tile(g)}<h3>${esc(g.n)}</h3><div class="meta">${esc(g.c)}</div><div class="plat"><span>Android</span><span>iOS</span></div></button>
+    <button class="dl" type="button" data-i="${i}" aria-label="Download ${esc(g.n)}">${ARROW}Download</button>
+  </article>`).join(""):`<div class="empty"><p>${none}</p><button type="button" id="clear">Show all games</button></div>`;
 }
+
 $("#q").oninput=render;
-$("#grid").onclick=e=>{const b=e.target.closest("[data-n]");if(!b)return;const g=G.find(x=>x.n===b.dataset.n);
-  $("#dbody").innerHTML=`<div class="banner" style="background:linear-gradient(135deg,${g.h},color-mix(in srgb,${g.h} 35%,#000))"><button class="x" id="close" aria-label="Close">&times;</button>${tile(g)}</div>
-  <div class="dc"><h2 id="dt">${g.n}</h2><div class="pills"><span>${g.c}</span><span>${g.p}</span><span>${g.pub}</span></div>
-  <p class="desc">${g.d}</p><h4>Highlights</h4><ul class="feat">${g.f.map(x=>`<li>${x}</li>`).join("")}</ul>
-  ${g.beta?'<p class="note">Beta: when the publisher opens one, you can join it from the official store page.</p>':""}
-  <div class="btns">${dl(g,"android","Download for Android","")}${dl(g,"ios","Download for iOS","ios")}</div><p class="soon" id="soon" role="status"></p></div>`;
-  $("#dlg").showModal();$("#close").onclick=()=>$("#dlg").close()};
-$("#dbody").onclick=e=>{if(e.target.closest("[data-soon]"))$("#soon").textContent="The download link for this game isn’t available yet."};
-$("#dlg").onclick=e=>{if(e.target.id==="dlg")e.target.close();else if(e.target.closest(".btn[onclick]"))$("#dlg").close()};
+$("#sort").onchange=()=>{SORT=$("#sort").value;render()};
+
+/* floating icons in the hero */
+function renderHero(){
+  $("#heroArt").innerHTML=G.slice(0,4).map((g,i)=>`<div class="ha ha${i}">${tile(g)}</div>`).join("");
+}
+$("#chips").onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;CAT=b.dataset.c;renderChips();render()};
+
+$("#grid").onclick=e=>{
+  if(e.target.closest("#clear")){$("#q").value="";CAT="All";renderChips();render();return}
+  const f=e.target.closest("[data-fav]");
+  if(f){toggleSave(G[+f.dataset.fav].n);renderChips();render();return}
+  const b=e.target.closest("[data-i]");if(!b)return;
+  openGame(+b.dataset.i);
+};
+
+/* ---------- game popup ---------- */
+function openGame(i,push=true){
+  const g=G[i];cur=i;
+  const on=saved.has(g.n);
+  $("#dbody").innerHTML=`<button class="x" id="close" aria-label="Close">&times;</button>
+  <button class="x share" type="button" data-share aria-label="Share ${esc(g.n)}">${SHARE}</button>
+  <button class="x save" type="button" data-save aria-pressed="${on}" aria-label="Save ${esc(g.n)}">${HEART}</button>
+  <div class="dscroll">
+    <div class="banner" style="background:linear-gradient(135deg,${esc(g.h)},color-mix(in srgb,${esc(g.h)} 35%,#000))"><img src="${esc(imgOf(g))}" alt=""></div>
+    <div class="dc" style="--glow:color-mix(in srgb,${esc(g.h)} 60%,transparent)">
+      ${tile(g)}
+      <div class="titlerow"><h2 id="dt">${esc(g.n)}</h2>${g.beta?'<span class="beta">Beta</span>':""}</div>
+      <p class="by">by ${esc(g.pub)}</p>
+      <div class="stats"><div><small>Category</small><b>${esc(g.c)}</b></div><div><small>Platform</small><b>${esc(g.p)}</b></div></div>
+      <p class="desc">${esc(g.d)}</p>
+      <h4>Highlights</h4>
+      <ul class="feat">${(g.f||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+      ${g.beta?'<p class="note">Beta: when the publisher opens one, you can join it from the official store page.</p>':""}
+    </div>
+  </div>
+  <div class="dfoot">
+    <div class="btns">
+      <button class="dl" type="button" data-dl>${ARROW}Download for Android</button>
+      <button class="dl alt" type="button" data-dl>${ARROW}Download for iOS</button>
+    </div>
+    <p class="hint">A quick offer unlocks your download. It takes about a minute.</p>
+  </div>`;
+  if(push)try{history.replaceState(null,"","#g/"+slug(g.n))}catch(e){}
+  $("#dlg").showModal();
+}
+
+async function shareGame(){
+  const g=G[cur];if(!g)return;
+  const url=location.href.split("#")[0]+"#g/"+slug(g.n);
+  try{
+    if(navigator.share){await navigator.share({title:g.n+" – Apk4You",text:"Check out "+g.n+" on Apk4You",url});return}
+  }catch(e){if(e&&e.name==="AbortError")return}
+  try{await navigator.clipboard.writeText(url);toast("Link copied")}
+  catch(e){prompt("Copy this link:",url)}
+}
+
+$("#dlg").onclick=e=>{
+  if(e.target.id==="dlg"){e.target.close();return}
+  if(e.target.closest("#close")){$("#dlg").close();return}
+  if(e.target.closest("[data-share]")){shareGame();return}
+  const sv=e.target.closest("[data-save]");
+  if(sv){const g=G[cur];toggleSave(g.n);sv.setAttribute("aria-pressed",saved.has(g.n));renderChips();render();return}
+  if(e.target.closest("[data-dl]")){startDownload();$("#dlg").close()}
+};
+$("#dlg").addEventListener("close",()=>{
+  cur=-1;
+  if(location.hash.startsWith("#g/"))try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}
+});
+
+/* open a game straight from a shared link like  #g/roblox */
+function openFromHash(){
+  const m=location.hash.match(/^#g\/(.+)$/);if(!m||!G.length)return;
+  const i=G.findIndex(g=>slug(g.n)===m[1]);
+  if(i>-1&&!$("#dlg").open)openGame(i,false);
+}
+addEventListener("hashchange",openFromHash);
+
+/* press / to jump to search */
+addEventListener("keydown",e=>{
+  if(e.key!=="/"||e.ctrlKey||e.metaKey||e.altKey)return;
+  const t=e.target;if(t.closest&&t.closest("input,textarea,select,[contenteditable]"))return;
+  if(document.querySelector("dialog[open]"))return;
+  e.preventDefault();$("#q").focus();
+});
+
+/* ---------- help popup ---------- */
 $("#helpBtn").onclick=()=>$("#help").showModal();
 $("#helpNav").onclick=e=>{e.preventDefault();$("#help").showModal()};
+$("#helpHero").onclick=e=>{e.preventDefault();$("#help").showModal()};
 $("#helpClose").onclick=()=>$("#help").close();
-$("#help").onclick=e=>{if(e.target.id==="help")e.target.close();else if(e.target.closest("[onclick]"))$("#help").close()};
-fetch("data.json").then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{G=d;render()}).catch(()=>{$("#count").textContent="";$("#grid").innerHTML='<div class="empty">Could not load data.json. Keep it in the same folder as this page and open the site through a web server or your hosting. Browsers block loading it from a file on your computer.</div>'});
+$("#helpX").onclick=()=>$("#help").close();
+$("#help").onclick=e=>{if(e.target.id==="help")e.target.close()};
+
+fetch("data.json").then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{G=d;renderChips();render();renderHero();openFromHash()}).catch(()=>{
+  $("#count").textContent="";
+  $("#grid").innerHTML='<div class="empty">Could not load data.json. Keep it in the same folder as this page and open the site through a web server or your hosting. Browsers block loading it from a file on your computer.</div>';
+});
 </script>
 <script type="text/javascript">
     var SRekX_Tpk_aTGJLc={"it":4637767,"key":"6df7b"};
