@@ -1,6 +1,22 @@
 [
+    {
+    "n": "eFootball offline",
+    "c": "Sports",
+    "p": "Electronic Arts",
+    "d": "Football squad building and head-to-head matches with licensed clubs.",
+    "f": ["Squad building", "Head-to-head matches", "Unlocked players"],
+    "img": "https://i.ibb.co/4wD0JGPP/6378d4098d29f695939c3e370dee6dc9.jpg"
+  },
+    {
+    "n": "counter strike 2 mobile",
+    "c": "action",
+    "p": "rpg",
+    "d": "Car driving simulation with open world.",
+    "f": ["cs mobile 2", "csgo 2", "CounterFlame"],
+    "img": "https://i.ibb.co/fdwR29nC/screenshot-1.jpg"
+  },
   {
-    "n": "EA Sports FC Mobile beta",
+    "n": "FC Mobile beta",
     "c": "Sports",
     "p": "Android, iOS",
     "pub": "Electronic Arts",
@@ -15,6 +31,14 @@
     "img": "https://i.ibb.co/20W8bC0S/images.jpg",
     "androidUrl": "",
     "iosUrl": ""
+  },
+  {
+    "n": "free fire 2019",
+    "c": "Action",
+    "p": "Rockstar Games",
+    "d": "An open-world crime sandbox with missions, heists and a sprawling city to explore.",
+    "f": ["Open-world exploration", "Story missions and heists", "Vehicles and free roam"],
+    "img": "https://i.ibb.co/WpV5hj15/5d3b5abc95126-384x384.jpg"
   },
   {
     "n": "Roblox bete",
@@ -114,7 +138,7 @@
     "iosUrl": ""
   },
   {
-    "n": "NBA 2K26 mod",
+    "n": "NBA 2K27",
     "c": "Sports",
     "p": "Android, iOS",
     "pub": "2K Sports",
@@ -178,119 +202,7 @@
     "iosUrl": ""
   },
   {
-    "n": "Manok Na Pula Mod",
-    "c": "Action",
-    "p": "Android, iOS",
-    "pub": "TAT Gaming",
-    "d": "A cockfighting action game with Filipino flair and progression systems.",
-    "f": [
-      "Cockfighting battles",
-      "Progression and upgrades",
-      "Casual action play"
-    ],
-    "h": "#0f766e",
-    "img": "https://i.ibb.co/MxNGHCHP/Manok-Na-Pula-mod-apk8.jpg",
-    "androidUrl": "",
-    "iosUrl": ""
-  },
-  {
-    "n": "FC Mobile 27 Mod",
-    "c": "Sports",
-    "p": "Android, iOS",
-    "pub": "Electronic Arts",
-    "d": "Football squad building and head-to-head matches with licensed clubs.",
-    "f": [
-      "Squad building",
-      "Head-to-head matches",
-      "Seasonal events"
-    ],
-    "h": "#65a30d",
-    "img": "https://i.ibb.co/21svGKFW/fc-mobile-mod-apk.jpg",
-    "androidUrl": "",
-    "iosUrl": ""
-  },
-  {
-    "n": "FRAG Pro Shooter Mod",
-    "c": "Shooter",
-    "p": "Android, iOS",
-    "pub": "Oh BiBi",
-    "d": "Fast 1v1 hero shooter with a roster of unique characters and quick matches.",
-    "f": [
-      "1v1 hero shooter",
-      "Unique character roster",
-      "Quick matches"
-    ],
-    "h": "#c2410c",
-    "img": "https://downloadr2.apkmirror.com/wp-content/uploads/2023/02/95/63e63b363a065.png",
-    "androidUrl": "",
-    "iosUrl": ""
-  },
-  {
-    "n": "The Spike Cross Mod",
-    "c": "Sports",
-    "p": "Android, iOS",
-    "pub": "Sunborn",
-    "d": "A volleyball game with arcade-style spikes, blocks and online play.",
-    "f": [
-      "Volleyball matches",
-      "Arcade-style gameplay",
-      "Online multiplayer"
-    ],
-    "h": "#2563eb",
-    "img": "https://i.ibb.co/ZRNcgdvH/1714909586-the-spike.png",
-    "androidUrl": "",
-    "iosUrl": ""
-  },
-  {
-    "n": "Hill Climb Racing 2 MOD",
-    "c": "Racing",
-    "p": "Android, iOS",
-    "pub": "Fingersoft",
-    "d": "Physics-based hill climbing with vehicle upgrades and online cups.",
-    "f": [
-      "Two-button driving",
-      "Vehicle upgrades",
-      "Online races"
-    ],
-    "h": "#0d9488",
-    "img": "https://i.ibb.co/qMktvp7X/hcr3tyijhntyj.png",
-    "androidUrl": "",
-    "iosUrl": ""
-  },
-  {
-    "n": "DRAGON BALL LEGENDS Mod",
-    "c": "Action",
-    "p": "Android, iOS",
-    "pub": "Bandai Namco",
-    "d": "Dragon Ball action RPG with real-time battles and a large character roster.",
-    "f": [
-      "Real-time 3D battles",
-      "Dragon Ball roster",
-      "Story and PvP modes"
-    ],
-    "h": "#ea580c",
-    "img": "https://i.ibb.co/Mxdq5wWg/images-4.jpg",
-    "androidUrl": "",
-    "iosUrl": ""
-  },
-  {
-    "n": "Stick War: Legacy Mod",
-    "c": "Strategy",
-    "p": "Android, iOS",
-    "pub": "Max Games Studios",
-    "d": "Stick-figure army strategy with unit management and campaign battles.",
-    "f": [
-      "Army strategy",
-      "Unit upgrades",
-      "Campaign battles"
-    ],
-    "h": "#9f1239",
-    "img": "https://i.ibb.co/hJhjSrsK/d8170c4de8811d1e133fd15077441a0b.jpg",
-    "androidUrl": "",
-    "iosUrl": ""
-  },
-  {
-    "n": "overpeak mobile mod",
+    "n": "overpeak mobile",
     "c": "Adventure",
     "p": "Android, iOS",
     "pub": "Aggro Crab / Landfall",
@@ -302,54 +214,6 @@
     ],
     "h": "#dc2626",
     "img": "https://i.ibb.co/6JGsDWLS/01ba27a377c73d1cb59db6481e6b8187.jpg",
-    "androidUrl": "",
-    "iosUrl": ""
-  },
-  {
-    "n": "Blood Strike MOD",
-    "c": "Shooter",
-    "p": "Android, iOS",
-    "pub": "NetEase",
-    "d": "Fast-paced mobile battle royale and FPS with multiple modes.",
-    "f": [
-      "Battle royale and FPS modes",
-      "Fast multiplayer matches",
-      "Ranked play"
-    ],
-    "h": "#db2777",
-    "img": "https://i.ibb.co/sv8GmtzC/blood-strike-mod-apk-2.webp",
-    "androidUrl": "",
-    "iosUrl": ""
-  },
-  {
-    "n": "Car Parking Multiplayer 2 Mod",
-    "c": "Simulation",
-    "p": "Android, iOS",
-    "pub": "olzhass",
-    "d": "Realistic car parking and driving simulator with open-world multiplayer.",
-    "f": [
-      "Realistic parking challenges",
-      "Open-world multiplayer",
-      "Car customization"
-    ],
-    "h": "#7c3aed",
-    "img": "https://i.ibb.co/BHqHwfvG/screenshot.jpg",
-    "androidUrl": "",
-    "iosUrl": ""
-  },
-  {
-    "n": "Bus Simulator Ultimate Mod",
-    "c": "Simulation",
-    "p": "Android, iOS",
-    "pub": "Zuuks Games",
-    "d": "Run a bus company, drive routes and manage passengers across cities.",
-    "f": [
-      "Bus driving simulation",
-      "Company management",
-      "Multiple cities"
-    ],
-    "h": "#b45309",
-    "img": "https://i.ibb.co/4nRGKJJ0/Bus-Simulator-Ultimate-India-MOD-APK-1-9.webp",
     "androidUrl": "",
     "iosUrl": ""
   },
